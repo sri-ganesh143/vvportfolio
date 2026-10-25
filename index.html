@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vengat Karthikeyan M | Web Developer</title>
+  <meta name="description" content="Portfolio of Vengat Karthikeyan M, B.Tech IT student and web developer with a focus on full-stack development, cybersecurity and machine learning." />
+  <meta name="theme-color" content="#120400" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-count"><span id="loadNum">0</span>%</div>
+      <p>Initialising portfolio…</p>
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- 3D background -->
+  <canvas id="bg3d" aria-hidden="true"></canvas>
+  <div class="vignette"></div>
+  <div class="scroll-progress" id="progress"></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a href="#home" class="logo magnetic">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M14 1.6 20.3 8 14 14.4 7.7 8 14 1.6Z" fill="#ff8a1f"/>
+        <path d="M6.4 9.3 12.7 15.7 6.4 22.1 0.1 15.7 6.4 9.3Z" fill="#ff3d00"/>
+        <path d="M21.6 9.3 27.9 15.7 21.6 22.1 15.3 15.7 21.6 9.3Z" fill="#ff6a00"/>
+      </svg>
+      <span>Vengat<b>.</b></span>
+    </a>
+    <nav class="nav-pill" id="menu" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#contact" class="btn-light nav-cta magnetic">Hire me</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-lead">
+        <p class="hero-note reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.7 3.7 9S14.5 18.4 12 21c-2.5-2.6-3.7-5.7-3.7-9S9.5 5.6 12 3Z"/></svg>
+          <span>Based in Puducherry, India · open to work worldwide</span>
+        </p>
+        <h1 class="hero-title" id="heroName" aria-label="Vengat Karthikeyan M">
+          <span class="line">Vengat</span>
+          <span class="line">Karthikeyan <em>M</em></span>
+        </h1>
+        <p class="hero-role reveal">Web Developer · B.Tech IT — I build <span id="typed" class="typed"></span><span class="caret">|</span></p>
+        <p class="hero-sub reveal">I craft secure, responsive web experiences — blending full-stack development, cybersecurity and machine learning into solutions that scale.</p>
+
+        <div class="hero-cta reveal">
+          <a class="btn-flame magnetic" href="#projects">
+            View my work
+            <span class="go-dot" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
+          </a>
+          <div class="proof">
+            <div class="faces" aria-hidden="true">
+              <i style="--a:#ff7a3d;--b:#ffb27a"></i>
+              <i style="--a:#ff3d00;--b:#ff8a1f"></i>
+              <i style="--a:#d8434b;--b:#ff8a8f"></i>
+              <i style="--a:#ffb347;--b:#ffe0a0"></i>
+            </div>
+            <span class="proof-text"><strong>Open to opportunities</strong>Full-stack · Secure by design</span>
+          </div>
+        </div>
+
+        <ul class="hero-stats reveal">
+          <li class="stat"><span class="stat-mark" aria-hidden="true">*</span><span class="stat-value">8.5</span><span class="stat-label">CGPA</span><span class="stat-rule" aria-hidden="true"></span></li>
+          <li class="stat"><span class="stat-mark" aria-hidden="true">*</span><span class="stat-value">6</span><span class="stat-label">Certifications</span><span class="stat-rule" aria-hidden="true"></span></li>
+          <li class="stat"><span class="stat-mark" aria-hidden="true">*</span><span class="stat-value">3</span><span class="stat-label">Flagship projects</span><span class="stat-rule" aria-hidden="true"></span></li>
+        </ul>
+
+        <div class="hero-actions reveal">
+          <a href="resume.pdf" class="btn-ghost magnetic" download>Resume ↓</a>
+          <a href="#contact" class="btn-ghost magnetic">Contact me</a>
+        </div>
+      </div>
+      <div class="scroll-hint"><span></span>scroll</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div class="reveal">
+          <p class="eyebrow">01 / About</p>
+          <h2>Building <em>secure</em>, smart and scalable web experiences.</h2>
+        </div>
+        <div class="reveal about-card tilt">
+          <p>
+            I'm <strong>Vengat Karthikeyan M</strong>, a B.Tech Information Technology student at
+            Sri Manakula Vinayagar Engineering College, Puducherry, and an aspiring tech entrepreneur.
+          </p>
+          <p>
+            I enjoy full-stack web development, and I'm especially drawn to cybersecurity, network defence and
+            data analytics. I've worked hands-on with machine learning data privacy and competed in national-level
+            hackathons like Smarthathon 2.0, where building fast under pressure is the whole game.
+          </p>
+          <div class="stats">
+            <div><b data-count="3">0</b><span>Technical projects</span></div>
+            <div><b data-count="6">0</b><span>Certifications</span></div>
+            <div><b data-count="2">0</b><span>National contests</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container two-col">
+        <div class="reveal">
+          <p class="eyebrow">02 / Skills</p>
+          <h2>My <em>toolkit</em></h2>
+          <p class="muted">Drag the sphere to spin it.</p>
+          <div class="skill-groups">
+            <div class="sg"><h4>Web &amp; Databases</h4>
+              <ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>PHP</li><li>MySQL</li><li>MongoDB</li><li>Full-Stack Development</li></ul></div>
+            <div class="sg"><h4>Programming</h4>
+              <ul class="tags"><li>Python</li><li>Java</li><li>C</li><li>C++</li><li>SQL</li></ul></div>
+            <div class="sg"><h4>Cybersecurity &amp; Networking</h4>
+              <ul class="tags"><li>Network Security</li><li>Cisco CCNA Protocols</li><li>AWS Security</li></ul></div>
+            <div class="sg"><h4>Data Science &amp; ML</h4>
+              <ul class="tags"><li>Machine Unlearning</li><li>Python for Data Science</li><li>Data Analytics</li></ul></div>
+            <div class="sg"><h4>Soft Skills</h4>
+              <ul class="tags"><li>Entrepreneurial Mindset</li><li>Technical Leadership</li><li>Problem-Solving</li><li>Team Collaboration</li></ul></div>
+          </div>
+        </div>
+        <div class="sphere-wrap reveal">
+          <canvas id="skillsCanvas" aria-label="Interactive 3D constellation of skills"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">03 / Projects</p>
+          <h2>Selected <em>work</em></h2>
+        </div>
+        <p class="muted flip-note reveal">Hover a card (or tap on mobile) to flip it.</p>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-inner">
+              <div class="card-face card-front">
+                <div class="glare"></div>
+                <span class="card-num">01</span>
+                <h3>Selective Machine Unlearning Engine</h3>
+                <p>A targeted data-erasure engine that removes specific data subsets from trained ML models without full retraining. Parameter alignment algorithms verify the removal while keeping baseline accuracy, performance and privacy integrity.</p>
+                <ul class="tags"><li>Machine Learning</li><li>Data Privacy</li><li>Python</li></ul>
+                <span class="flip-hint">preview ↻</span>
+              </div>
+              <div class="card-face card-back">
+                <div class="mock mock-a">
+                  <div class="mock-bar"><i></i><i></i><i></i><span>unlearning-engine</span></div>
+                  <div class="mock-screen">
+                    <div class="mk-row"><span class="mk-chip">model.pt</span><span class="mk-chip">erase ▸</span></div>
+                    <div class="mk-bar" style="width:82%"></div><div class="mk-bar" style="width:64%"></div><div class="mk-bar" style="width:91%"></div>
+                    <div class="mk-stat"><b>99.2%</b> accuracy kept<br><b>−100%</b> target data</div>
+                  </div>
+                </div>
+                <div class="card-links"><span class="muted">Python · ML · Privacy</span><!-- <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener" class="magnetic">GitHub ↗</a> --></div>
+              </div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card-inner">
+              <div class="card-face card-front">
+                <div class="glare"></div>
+                <span class="card-num">02</span>
+                <h3>JARVIS: Voice-Controlled Navigation for the Elderly</h3>
+                <p>An accessible, voice-driven navigation app designed for hands-free guidance, with a high-usability UI/UX and real-time speech recognition that gives clear auditory and visual directional cues.</p>
+                <ul class="tags"><li>Speech Recognition</li><li>UI/UX</li><li>Accessibility</li></ul>
+                <span class="flip-hint">preview ↻</span>
+              </div>
+              <div class="card-face card-back">
+                <div class="mock mock-b">
+                  <div class="mock-bar"><i></i><i></i><i></i><span>jarvis-nav</span></div>
+                  <div class="mock-screen mk-center">
+                    <div class="mk-mic">🎙️</div>
+                    <div class="mk-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="mk-say">"Navigate to the pharmacy"</div>
+                  </div>
+                </div>
+                <div class="card-links"><span class="muted">Voice · UI/UX · A11y</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card-inner">
+              <div class="card-face card-front">
+                <div class="glare"></div>
+                <span class="card-num">03</span>
+                <h3>AI-Powered Internship Matching Platform</h3>
+                <p>A machine-learning platform connecting applicants to relevant internships through role-specific multi-portal interfaces, with dynamic candidate-screening pipelines that cut manual recruiting effort. Built for Smarthathon.</p>
+                <ul class="tags"><li>Machine Learning</li><li>Hackathon</li><li>Team Project</li></ul>
+                <span class="flip-hint">preview ↻</span>
+              </div>
+              <div class="card-face card-back">
+                <div class="mock mock-c">
+                  <div class="mock-bar"><i></i><i></i><i></i><span>intern-match</span></div>
+                  <div class="mock-screen">
+                    <div class="mk-match"><span>Candidate</span><b class="mk-score">94%</b></div>
+                    <div class="mk-bar" style="width:94%"></div>
+                    <div class="mk-match"><span>Role fit</span><b class="mk-score">88%</b></div>
+                    <div class="mk-bar" style="width:88%"></div>
+                    <div class="mk-row"><span class="mk-chip">12 portals</span><span class="mk-chip">auto-screen</span></div>
+                  </div>
+                </div>
+                <div class="card-links"><span class="muted">ML · Hackathon · Team</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">04 / Education</p>
+          <h2>My <em>journey</em> so far</h2>
+        </div>
+        <div class="timeline">
+          <div class="t-item reveal">
+            <span class="dot"></span>
+            <div class="t-card tilt">
+              <small>Expected graduation · May 2028</small>
+              <h3>Bachelor of Technology, Information Technology</h3>
+              <p class="org">Sri Manakula Vinayagar Engineering College (SMVEC), Puducherry</p>
+              <p><b>CGPA: 8.5</b></p>
+            </div>
+          </div>
+          <div class="t-item reveal">
+            <span class="dot"></span>
+            <div class="t-card tilt">
+              <small>Higher Secondary Certificate (HSC)</small>
+              <h3>Krishnaswamy Memorial Matriculation Higher Secondary School</h3>
+              <p class="org">Puducherry</p>
+              <p><b>Percentage: 77.83%</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">05 / Experience</p>
+          <h2>Hackathons, certifications &amp; <em>achievements</em></h2>
+        </div>
+        <div class="exp-grid">
+          <div class="exp reveal tilt">
+            <h3>🏆 Smarthathon 2.0 (National)</h3>
+            <p>Participant in a 24-hour national-level hackathon organised by Larsen &amp; Toubro and IEEE Madras Section at St. Joseph's College of Engineering.</p>
+          </div>
+          <div class="exp reveal tilt">
+            <h3>💻 TCS CodeVita Season 18</h3>
+            <p>Competed in Tata Consultancy Services' global coding contest, solving complex algorithmic challenges.</p>
+          </div>
+          <div class="exp reveal tilt">
+            <h3>🎓 Certifications</h3>
+            <ul class="plain">
+              <li>Cisco Certified Network Associate (CCNA): Switching, Routing and Wireless Essentials</li>
+              <li>AWS Academy Cloud Foundations, Amazon Web Services</li>
+              <li>MongoDB Basics for Students, MongoDB Academy</li>
+              <li>Infosys Springboard: Python for Data Science</li>
+              <li>Infosys Springboard: Basics of Python</li>
+              <li>NPTEL: Programming in Java, Ministry of Education, Govt. of India</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <canvas id="fxText" class="fx-text" aria-hidden="true"></canvas>
+        <div class="reveal center">
+          <p class="eyebrow">06 / Contact</p>
+          <h2>Let's build something <em>great</em> together.</h2>
+          <p class="muted">Open to opportunities, collaborations and a good conversation about the web. I speak English and Tamil.</p>
+        </div>
+        <div class="contact-grid reveal">
+          <button class="c-item magnetic" id="copyMail" data-mail="Venkatkarthikeyan45@gmail.com">
+            <span>Email</span><b>Venkatkarthikeyan45@gmail.com</b><i id="copyHint">click to copy</i>
+          </button>
+          <a class="c-item magnetic" href="tel:+917708655019"><span>Phone</span><b>+91 77086 55019</b></a>
+          <a class="c-item magnetic" href="https://www.linkedin.com/in/vengatkarthikeyan45" target="_blank" rel="noopener"><span>LinkedIn</span><b>linkedin.com/in/vengatkarthikeyan45</b></a>
+          <!-- To add GitHub: <a class="c-item magnetic" href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener"><span>GitHub</span><b>github.com/YOUR_USERNAME</b></a> -->
+          <div class="c-item static"><span>Location</span><b>Puducherry, India</b></div>
+        </div>
+      </div>
+      <footer>© <span id="year"></span> Vengat Karthikeyan M · Built with HTML, CSS, JavaScript &amp; Three.js</footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
